@@ -4,7 +4,7 @@ const Headercard = require("../models/headercard");
 
 exports.getAllRestaurantsData=async(req, res)=>{
     try {
-        const data = await Card.find();
+        const data = await Card.find()
        await res.json(data);
     } catch (err) {
         console.error("Error fetching restaurants:", err);

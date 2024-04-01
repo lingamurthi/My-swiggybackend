@@ -6,7 +6,7 @@ const port = process.env.PORT || 8000;
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const cardRoutes = require("./routes/card");
-
+const menuRoutes = require("./routes/menu");
 //DB Connection
 mongoose
   .connect(process.env.DATABASE, {
@@ -23,6 +23,8 @@ mongoose
 
 
   app.use("/api", cardRoutes);
+  app.use("/api", menuRoutes);
+
 app.listen(port,()=>{
     console.log(`app is running at ${port}`);
 })
